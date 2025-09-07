@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT2030 Software Engineering Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Software Engineering Mid-Exam Quiz</h1>
+            <div class="quiz-selector">
+                <select id="quizSelect">
+                    <option value="0">IT2030 Software Engineering Mid-Exam MCQs</option>
+                    <option value="1">Software Development Models</option>
+                    <option value="2">Agile and SCRUM</option>
+                    <option value="3">Use Case Diagrams</option>
+                    <option value="4">Activity Diagrams</option>
+                </select>
+                <button id="startQuiz">Start Quiz</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="quizIntro" class="quiz-intro">
+                <h2 id="quizTitle">Select a quiz to begin</h2>
+                <p id="quizInstructions">Choose a quiz from the dropdown above and click "Start Quiz"</p>
+                <div class="quiz-stats">
+                    <div class="stat">
+                        <span class="stat-label">Total Questions:</span>
+                        <span id="totalQuestions">-</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Time:</span>
+                        <span>No time limit</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quizContainer" class="quiz-container hidden">
+                <div class="quiz-header">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <div class="quiz-info">
+                        <span id="currentQuestion">1</span> of <span id="totalQuizQuestions">20</span>
+                    </div>
+                </div>
+
+                <div class="question-container">
+                    <h3 id="questionText">Question will appear here</h3>
+                    <div id="optionsContainer" class="options-container">
+                        <!-- Options will be dynamically generated -->
+                    </div>
+                    <div class="question-feedback hidden" id="questionFeedback">
+                        <p id="feedbackText"></p>
+                    </div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button id="prevBtn" class="btn btn-secondary" disabled>Previous</button>
+                    <button id="nextBtn" class="btn btn-primary" disabled>Next</button>
+                    <button id="submitBtn" class="btn btn-success hidden">Submit Quiz</button>
+                </div>
+            </div>
+
+            <div id="resultsContainer" class="results-container hidden">
+                <h2>Quiz Results</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="scorePercentage">0%</span>
+                    </div>
+                    <div class="score-details">
+                        <p>You scored <span id="finalScore">0</span> out of <span id="finalTotal">0</span></p>
+                        <p id="scoreMessage">Good job!</p>
+                    </div>
+                </div>
+                <div class="results-breakdown">
+                    <h3>Question Breakdown</h3>
+                    <div id="questionResults"></div>
+                </div>
+                <div class="results-actions">
+                    <button id="restartBtn" class="btn btn-primary">Take Another Quiz</button>
+                    <button id="reviewBtn" class="btn btn-secondary">Review Answers</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="quiz-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
